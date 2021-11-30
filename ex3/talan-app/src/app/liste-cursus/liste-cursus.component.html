@@ -1,0 +1,10 @@
+<h1 class="mt-3">Liste Des <strong>Cursus.</strong></h1>
+<app-detail-cursus [cursus]= "selectedCursus"></app-detail-cursus>
+<div class="d-flex flex-column align-items-center mt-30">
+<div class="card" *ngFor="let cursus of ( curs | sortname) ">
+    <img [class.selected]="selectedCursus" (click)="onSelect(cursus)" src="{{cursus.image}}" class="card-img-top" alt="error">
+    <div  class="card-body">
+      <h5 class="card-title">{{cursus.nom.toUpperCase()}}</h5>
+    </div>
+  </div>
+</div>
